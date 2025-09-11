@@ -1,0 +1,5 @@
+{
+  "watch": ["src"],
+  "ext": "js,json,scss,hbs",
+  "exec": "npm run build:scss && node src/index.js"
+}
