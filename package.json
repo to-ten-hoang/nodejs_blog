@@ -1,36 +1,49 @@
 {
-  "name": "blog",
-  "version": "1.0.0",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --inspect src/index.js",
-    "build:scss": "sass src/resources/scss/app.scss src/public/css/app.css --no-source-map",
-    "watch:scss": "sass --watch src/resources/scss/app.scss:src/public/css/app.css --no-source-map"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/to-ten-hoang/nodejs_blog.git"
-  },
-  "keywords": [
-    "f8",
-    "blog",
-    "nodejs"
-  ],
-  "author": "huyhoang",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/to-ten-hoang/nodejs_blog/issues"
-  },
-  "homepage": "https://github.com/to-ten-hoang/nodejs_blog#readme",
-  "description": "",
-  "dependencies": {
-    "express": "^5.1.0",
-    "express-handlebars": "^8.0.1"
-  },
-  "devDependencies": {
-    "morgan": "^1.10.1",
-    "nodemon": "^3.1.10",
-    "sass": "^1.92.1"
-  }
+    "name": "blog",
+    "version": "1.0.0",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon --inspect src/index.js",
+        "build:scss": "sass src/resources/scss/app.scss src/public/css/app.css --no-source-map",
+        "watch:scss": "sass --watch src/resources/scss/app.scss:src/public/css/app.css --no-source-map"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/to-ten-hoang/nodejs_blog.git"
+    },
+    "keywords": [
+        "f8",
+        "blog",
+        "nodejs"
+    ],
+    "author": "huyhoang",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/to-ten-hoang/nodejs_blog/issues"
+    },
+    "homepage": "https://github.com/to-ten-hoang/nodejs_blog#readme",
+    "description": "",
+    "lint-staged": {
+        "*.{js,css,scss,html,json}": [
+            "prettier --single-quote --write --trailing-comma all --tab-width=4"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "dependencies": {
+        "express": "^5.1.0",
+        "express-handlebars": "^8.0.1"
+    },
+    "devDependencies": {
+        "husky": "^9.1.7",
+        "lint-staged": "^16.2.3",
+        "morgan": "^1.10.1",
+        "nodemon": "^3.1.10",
+        "prettier": "^3.6.2",
+        "sass": "^1.92.1"
+    }
 }
